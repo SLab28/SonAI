@@ -1,1 +1,29 @@
-@/home/user/workspace/sonai_repo_push/.gitignore
+# Python
+__pycache__/
+.pytest_cache/
+.venv/
+*.pyc
+
+# Node
+node_modules/
+dist/
+coverage/
+
+# Runtime logs and temp files
+*.log
+tool_calls/
+.js_repl/
+video-recordings/
+
+# Generated local outputs
+output/
+validation-*.png
+sonai-smoke*.png
+sonai-kothbiro-test.png
+sonai-deck-slide-*.jpg
+sonai-investor-deck.pdf
+sonai-deck-review.md
+
+# Audio files should not be committed
+*.mp3
+*.wav
