@@ -4,6 +4,9 @@ __pycache__/
 .venv/
 *.pyc
 
+# Local environment (never commit real keys)
+.env
+
 # Node
 node_modules/
 dist/
