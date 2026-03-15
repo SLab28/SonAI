@@ -24,24 +24,64 @@ AI-native node editor for general audio signal analysis and non-vocal, flow-stat
 - Synthesis: SuperCollider 3 via python-osc
 
 ## Quick Start
+
+### One-command startup
+
+The startup scripts install nothing — they just launch the backend and frontend
+in parallel. Run `--setup` on first use to install dependencies.
+
+**Windows (Command Prompt or PowerShell):**
+```
+start.bat --setup
+```
+
+**Linux / macOS / WSL:**
+```bash
+./start.sh --setup
+```
+
+After the first run, drop the `--setup` flag:
+```
+start.bat        # Windows
+./start.sh       # Linux / macOS / WSL
+```
+
+This starts:
+- FastAPI backend on http://localhost:8000
+- Vite frontend on http://localhost:5173
+
+Press `Ctrl+C` in the frontend window to stop. On Windows, close the
+"SonAI Backend" window separately.
+
+### Prerequisites
+
+| Tool | Version | Install |
+|------|---------|---------|
+| Python | 3.12 | https://www.python.org/downloads/ |
+| uv | latest | https://docs.astral.sh/uv/getting-started/installation/ |
+| Node.js | 18+ | https://nodejs.org/ |
+| pnpm | latest | `npm install -g pnpm` or https://pnpm.io/installation |
+| SuperCollider | 3.x (optional) | https://supercollider.github.io/ |
+
+> **Note:** SuperCollider is only required for audio synthesis/rendering.
+> The node editor UI and analysis tools work without it.
+
+### Manual startup (step by step)
 ```bash
 # Install Python deps
 uv sync
 
 # Install frontend deps
-pnpm install
+cd frontend && pnpm install && cd ..
 
-# Start SuperCollider server (must be running first)
+# (Optional) Start SuperCollider server
 python -m backend.sc.boot
 
 # Start backend
 uv run uvicorn backend.main:app --reload --port 8000
 
-# Start MCP server
-uv run mcp run backend/mcp_server.py
-
-# Start frontend
-pnpm dev
+# In a second terminal — start frontend
+cd frontend && pnpm dev
 ```
 
 ## Read First
