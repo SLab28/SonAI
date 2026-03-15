@@ -1,1 +1,6 @@
-@/home/user/workspace/sonai_repo_push/frontend/postcss.config.js
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
