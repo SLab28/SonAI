@@ -1,1 +1,27 @@
-@/home/user/workspace/sonai_repo_push/pyproject.toml
+[project]
+name = "sonai"
+version = "0.1.0"
+description = "AI-native audio intelligence node editor for analysis and non-vocal flow-state soundscape generation"
+readme = "README.md"
+requires-python = "==3.12.*"
+dependencies = [
+  "fastapi>=0.115,<1.0",
+  "fastmcp>=2.10,<3.0",
+  "librosa>=0.10.2,<1.0",
+  "essentia>=2.1b6.dev1389,<3.0",
+  "aubio>=0.4.9,<1.0",
+  "python-osc>=1.9,<2.0",
+  "pydantic>=2.9,<3.0",
+  "numpy>=1.26,<2.0",
+  "matplotlib>=3.9,<4.0",
+  "uvicorn[standard]>=0.30,<1.0",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3,<9.0",
+  "pytest-asyncio>=0.24,<1.0",
+]
+
+[tool.uv]
+package = false
