@@ -6,14 +6,13 @@ REQUIRED_PACKAGES = [
     "fastapi",
     "fastmcp",
     "librosa",
-    "essentia",
-    "aubio",
+    "anthropic",
     "python-osc",
 ]
 
 
 def test_required_packages_declared_in_pyproject() -> None:
-    pyproject = Path("/home/user/workspace/pyproject.toml")
+    pyproject = Path(__file__).resolve().parents[2] / "pyproject.toml"
     data = tomllib.loads(pyproject.read_text())
     dependencies = data["project"]["dependencies"]
 

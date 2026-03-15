@@ -20,7 +20,8 @@ AI-native node editor for general audio signal analysis and non-vocal, flow-stat
 ## Stack
 - Frontend: React 18 + TypeScript + React Flow + Vite
 - Backend: Python 3.12 + FastAPI + FastMCP
-- Analysis: librosa + Essentia + Aubio
+- Agent: Claude (Anthropic API) with tool-use loop + deterministic fallback
+- Analysis: librosa
 - Synthesis: SuperCollider 3 via python-osc
 
 ## Quick Start
