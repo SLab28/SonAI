@@ -1,0 +1,1 @@
+@/home/user/workspace/sonai_repo_push/frontend/vitest.config.ts
