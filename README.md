@@ -8,6 +8,9 @@
 
 AI-native node editor for general audio signal analysis and non-vocal, flow-state soundscape generation.
 
+
+![alt text](artifacts/demo/demo-screen.png)
+
 ## What it does
 1. Drop audio files onto the canvas
 2. State an objective (e.g. "Analyse this ambient recording and generate a calmer gamma-flow version")
