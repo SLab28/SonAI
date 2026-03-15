@@ -8,13 +8,13 @@ dependencies = [
   "fastapi>=0.115,<1.0",
   "fastmcp>=2.10,<3.0",
   "librosa>=0.10.2,<1.0",
-  "essentia>=2.1b6.dev1389,<3.0",
-  "aubio>=0.4.9,<1.0",
+  "anthropic>=0.42,<1.0",
   "python-osc>=1.9,<2.0",
   "pydantic>=2.9,<3.0",
   "numpy>=1.26,<2.0",
   "matplotlib>=3.9,<4.0",
   "uvicorn[standard]>=0.30,<1.0",
+  "python-dotenv>=1.0,<2.0",
 ]
 
 [dependency-groups]

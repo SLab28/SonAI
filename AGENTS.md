@@ -11,9 +11,9 @@ and assemble a generation graph that produces flow-state music.
 |---|---|
 | Frontend | React 18 + TypeScript, Vite, React Flow, Zustand, Tailwind CSS |
 | Backend | Python 3.12, FastAPI, Uvicorn, FastMCP |
-| Analysis | librosa, Essentia, Aubio |
+| Analysis | librosa |
 | Synthesis | SuperCollider 3 (scsynth port 57110, sclang port 57120) via python-osc |
-| Agent | Claude (tool-calling via MCP) |
+| Agent | Claude (Anthropic API tool-use loop with deterministic fallback) |
 | Package manager | uv (Python), pnpm (JS) |
 
 ## Commands
