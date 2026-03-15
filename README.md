@@ -1,7 +1,9 @@
 # SonAI — Audio Intelligence Node Editor
 
+## Website
+- [SonaAI](https://slab28.github.io/SonAI)
 ## Demo assets
-- [Demo video](https://github.com/SLab28/SonAI/blob/main/artifacts/demo/sonai-frequency-analysis-recording.mp4)
+- [Demo video](https://slab28.github.io/SonAI/#demo)
 - [Screenshot](https://github.com/SLab28/SonAI/blob/main/artifacts/demo/step-5-complete-graph.png)
 
 AI-native node editor for general audio signal analysis and non-vocal, flow-state soundscape generation.
