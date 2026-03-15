@@ -1,1 +1,0 @@
-@/home/user/workspace/sonai_repo_push/tests/__init__.py
