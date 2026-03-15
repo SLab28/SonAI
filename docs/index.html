@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SonAI</title>
+<meta name="description" content="SonAI is an AI-native audio intelligence node editor for analysis and non-vocal generation. Watch the demo and explore the project.">
+<meta property="og:title" content="SonAI">
+<meta property="og:description" content="AI-native audio intelligence for analysis and generation.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="./demo/step-5-complete-graph.png">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=zodiak@400,700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+  --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+  --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+  --color-bg: #171614;
+  --color-surface: #1c1b19;
+  --color-surface-2: #201f1d;
+  --color-border: #393836;
+  --color-text: #cdccca;
+  --color-text-muted: #97938d;
+  --color-primary: #4f98a3;
+  --color-primary-strong: #7dc1cb;
+  --color-card: rgba(28,27,25,0.82);
+  --shadow-lg: 0 18px 44px rgba(0,0,0,0.32);
+  --font-display: 'Zodiak', Georgia, serif;
+  --font-body: 'General Sans', system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-text);
+  background:
+    radial-gradient(circle at top left, rgba(79,152,163,0.14), transparent 34%),
+    radial-gradient(circle at 85% 12%, rgba(125,193,203,0.09), transparent 22%),
+    var(--color-bg);
+}
+a { color: inherit; }
+img, video { display: block; max-width: 100%; }
+.page {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: var(--space-8) 0 var(--space-16);
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-10);
+}
+.brand {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.nav {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+.nav a {
+  text-decoration: none;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-8);
+  align-items: start;
+  margin-bottom: var(--space-12);
+}
+.kicker {
+  color: var(--color-primary-strong);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-3);
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  line-height: 1.02;
+  margin: 0 0 var(--space-4);
+  max-width: 10ch;
+}
+.hero p {
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-6);
+  max-width: 58ch;
+}
+.actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 46px;
+  padding: 0 1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: var(--text-sm);
+  border: 1px solid var(--color-border);
+}
+.button.primary {
+  background: var(--color-primary);
+  color: #0e1718;
+  border-color: transparent;
+  font-weight: 600;
+}
+.button.ghost {
+  background: rgba(255,255,255,0.02);
+}
+.panel {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(10px);
+}
+.panel h2, .section h2 {
+  font-size: var(--text-lg);
+  margin: 0 0 var(--space-3);
+}
+.meta-list {
+  display: grid;
+  gap: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+.section {
+  margin-bottom: var(--space-12);
+}
+.media-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-6);
+}
+.video-card video, .shot-card img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: #0c0c0c;
+}
+.caption {
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+.card {
+  background: rgba(255,255,255,0.015);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+.card h3 {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-base);
+}
+.card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+.event {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-6);
+}
+.event .eyebrow {
+  color: var(--color-primary-strong);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-2);
+}
+.footer {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-6);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+.footer a { text-decoration: none; }
+@media (max-width: 900px) {
+  .hero, .media-grid, .cards, .event {
+    grid-template-columns: 1fr;
+  }
+  .hero h1 { max-width: 14ch; }
+}
+</style>
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <div class="brand">SonAI</div>
+      <nav class="nav">
+        <a href="#demo">Demo</a>
+        <a href="#what">What it is</a>
+        <a href="#event">Event</a>
+        <a href="https://github.com/SLab28/SonAI" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="kicker">AI-native audio intelligence</div>
+        <h1>Analysis and generation in one graph.</h1>
+        <p>SonAI is a natural-language node editor that turns reference audio into structured analysis, interpretable musical insight, and a non-vocal generated output. The current prototype demonstrates an end-to-end graph from audio loading to rendered result.</p>
+        <div class="actions">
+          <a class="button primary" href="#demo">Watch demo</a>
+          <a class="button ghost" href="https://github.com/SLab28/SonAI" target="_blank" rel="noopener noreferrer">Open repository</a>
+        </div>
+      </div>
+      <aside class="panel">
+        <h2>Validated right now</h2>
+        <div class="meta-list">
+          <div>Frequency analysis walkthrough recorded from the app UI.</div>
+          <div>Graph-based agent flow from analysis through MixRender output.</div>
+          <div>Investor deck and demo assets published alongside the codebase.</div>
+          <div>MCP is present in the project architecture for agent-driven tooling.</div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="demo">
+      <h2>Demo</h2>
+      <div class="media-grid">
+        <article class="panel video-card">
+          <video controls preload="metadata" poster="./demo/step-5-complete-graph.png">
+            <source src="./demo/sonai-frequency-analysis-recording.mp4" type="video/mp4">
+            Your browser does not support the demo video.
+          </video>
+          <p class="caption">Recorded walkthrough of the SonAI graph while running frequency analysis on a reference track.</p>
+        </article>
+        <article class="panel shot-card">
+          <img src="./demo/step-5-complete-graph.png" alt="Validated SonAI graph showing the completed analysis flow in the app interface.">
+          <p class="caption">Final graph state after the analysis run completed in the application.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="what">
+      <h2>What SonAI does</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Input</h3>
+          <p>Upload a reference file and describe the musical objective in plain English.</p>
+        </article>
+        <article class="card">
+          <h3>Analysis</h3>
+          <p>The agent places nodes for spectral, temporal, pitch, onset, and segmentation analysis.</p>
+        </article>
+        <article class="card">
+          <h3>Generation</h3>
+          <p>The graph composes a non-vocal output using reusable node outputs and a render chain.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="event">
+      <div class="panel event">
+        <div>
+          <div class="eyebrow">Built during</div>
+          <h2>Mozart AI Hack With ElevenLabs &amp; OpenAI</h2>
+        </div>
+        <div>
+          <p>SonAI was developed in the context of Mozart AI Hack With ElevenLabs &amp; OpenAI, a 24-hour hackathon for developers, designers, producers, and builders exploring the future of music creation.</p>
+          <p>Event details: Halkin, London · March 14–15, 2026 · organized by Mozart AI.</p>
+          <a class="button ghost" href="https://luma.com/678xcfd4?tk=lI2kod" target="_blank" rel="noopener noreferrer">View event page</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>SonAI demo landing page</div>
+      <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer">Created with Perplexity Computer</a>
+    </footer>
+  </main>
+</body>
+</html>
