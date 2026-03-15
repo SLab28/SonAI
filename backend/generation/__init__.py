@@ -1,1 +1,0 @@
-@/home/user/workspace/sonai_repo_push/backend/generation/__init__.py
