@@ -1,4 +1,4 @@
-# SonAI — Audio Intelligence Node Editor
+# SonAI — Automated Audio Node Editor
 
 ## Website
 - [SonaAI](https://slab28.github.io/SonAI)
@@ -6,21 +6,21 @@
 - [Demo video](https://slab28.github.io/SonAI/#demo)
 - [Screenshot](https://github.com/SLab28/SonAI/blob/main/artifacts/demo/step-5-complete-graph.png)
 
-Open source, AI-native node editor for general audio signal analysis and non-vocal, flow-state soundscape generation.
+Open source, AI-native node editor for general audio signal analysis and soundscape generation.
 
 
 ![alt text](artifacts/demo/demo-screen.png)
 
-## What it does
-1. Drop audio files onto the canvas
-2. State an objective (e.g. "Analyse this ambient recording and generate a calmer gamma-flow version")
+## Utility
+1. Upload audio files
+2. Ask (e.g. "Analyse this ambient recording and generate a calmer gamma-flow version")
 3. An AI agent places analysis nodes, runs them, derives insights, and assembles a generation graph
-4. SuperCollider renders the result as a non-vocal soundscape
+4. SuperCollider renders the result
 
 ## Stack
 - Frontend: React 18 + TypeScript + React Flow + Vite
 - Backend: Python 3.12 + FastAPI + FastMCP
-- Analysis: librosa + Essentia + Aubio
+- Analysis: librosa
 - Synthesis: SuperCollider 3 via python-osc
 
 ## Quick Start
@@ -44,11 +44,9 @@ uv run mcp run backend/mcp_server.py
 pnpm dev
 ```
 
-## Read First
-- AGENTS.md — project rules and boundaries for coding agents
-- SPEC.md — product specification and data contracts
-- TASKS.md — phase-gated task list (start here)
-- ARCHITECTURE.md — system diagrams and API contracts
+## Development state
+- UI in beta
+- Project rules and boundaries for coding agents in beta
 
 ## Docs
 - docs/node-schemas.md — all typed schemas
