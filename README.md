@@ -6,7 +6,7 @@
 - [Demo video](https://slab28.github.io/SonAI/#demo)
 - [Screenshot](https://github.com/SLab28/SonAI/blob/main/artifacts/demo/step-5-complete-graph.png)
 
-AI-native node editor for general audio signal analysis and non-vocal, flow-state soundscape generation.
+Open source, AI-native node editor for general audio signal analysis and non-vocal, flow-state soundscape generation.
 
 
 ![alt text](artifacts/demo/demo-screen.png)
