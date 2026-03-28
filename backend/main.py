@@ -2,11 +2,25 @@
 from __future__ import annotations
 import asyncio
 import json
+from pathlib import Path
 from typing import Any
 
+from dotenv import load_dotenv
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+
+# Load .env from the project root (parents[1] = backend/.., i.e. repo root)
+load_dotenv(Path(__file__).resolve().parents[1] / ".env")
+
+import logging as _logging
+import os as _os
+
+if not _os.environ.get("ANTHROPIC_API_KEY"):
+    _logging.getLogger(__name__).warning(
+        "ANTHROPIC_API_KEY is not set. "
+        "Copy .env.example to .env and add your key for Claude-powered features."
+    )
 
 from backend.graph import graph
 from backend.schemas import NodeOutput
